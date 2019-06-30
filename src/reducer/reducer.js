@@ -1,18 +1,18 @@
 import { ADD_TODO, TOGGLE_TODO } from './actions';
+import { v4 } from 'uuid';
 
-let id = 1;
 export function todoReducer(state = [],action) {
-    switch (action['type']) {
+    switch (action.type) {
         case ADD_TODO:
             return state.concat({
-                'todoId' : id++,
-                'todoName' : action['name'],
-                'isDone' : false
+                todoId : v4(),
+                todoName : action.name,
+                isDone : false
             });
         case TOGGLE_TODO:
             return state.map((cur) => {
-                if (cur['todoId'] == action['id']) {
-                    return {...cur, 'isDone' : !cur['isDone']};
+                if (cur.todoId === action.id) {
+                    return {...cur, isDone : !cur.isDone};
                 } else {
                     return cur;
                 }

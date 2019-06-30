@@ -5,19 +5,36 @@ class CreateTodo extends React.Component {
         super(props);
         this.handleChange = this.handleChange.bind(this);
         this.state = {
-            'todoName' :  ''
+            todoName :  ''
         }
     }
     handleChange(evt) {
         this.setState({
-            'todoName' : evt.target.value
+            todoName : evt.target.value
         });
     }
     render() {
         return (
-            <div>
-                <input type='text' value={this.state['todoName']} onChange={this.handleChange}/>
-            </div>
+            <form 
+                onSubmit={
+                    (evt) => {
+                        evt.preventDefault();
+                        this.props.create(this.state.todoName);
+                        this.setState({
+                            todoName : ''
+                        });
+                    }
+                }
+            >
+                <input
+                    type='text'
+                    value={this.state.todoName}
+                    onChange={this.handleChange}
+                />
+                <button type='submit'>
+                    Adicionar tarefa
+                </button>
+            </form>
         );
     }
 }
