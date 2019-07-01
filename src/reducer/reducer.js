@@ -33,7 +33,7 @@ function filterReducer(state = 'all',action) {
 }
 
 const rootReducer = combineReducers({
-    todo : todoReducer,
+    todos : todoReducer,
     filter : filterReducer
 });
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { setFilter } from '../reducer/actions';
 
 class TodoFilter extends React.Component {
     constructor(props) {
@@ -16,6 +18,8 @@ class TodoFilter extends React.Component {
                         (evt) => {
                             this.setState({
                                 selectValue : evt.target.value
+                            },() => {
+                                this.props.setFilter(this.state.selectValue);
                             });
                         }
                     }
@@ -29,4 +33,10 @@ class TodoFilter extends React.Component {
     }
 }
 
-export default TodoFilter;
+function mapDispatchToProps(dispatch) {
+    return {
+        setFilter: (filter) => { dispatch(setFilter(filter)) }
+    }
+}
+
+export default connect(null,mapDispatchToProps)(TodoFilter);

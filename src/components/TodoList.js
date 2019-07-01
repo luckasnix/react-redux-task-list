@@ -39,7 +39,7 @@ class TodoList extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        todos : state.todo
+        todos : state.todos
     }
 }
 

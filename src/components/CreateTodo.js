@@ -28,6 +28,7 @@ class CreateTodo extends React.Component {
             >
                 <input
                     type='text'
+                    placeholder='Nova tarefa'
                     value={this.state.todoName}
                     onChange={this.handleChange}
                 />
