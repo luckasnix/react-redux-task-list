@@ -2,7 +2,7 @@ import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducer/reducer';
-import TodoList from './components/TodoList';
+import TodoApp from './components/TodoApp';
 
 const store = createStore(reducer);
 
@@ -15,7 +15,7 @@ store.subscribe(
 function App() {
     return (
         <Provider store={store}>
-            <TodoList/>
+            <TodoApp/>
         </Provider>
     );
 }
