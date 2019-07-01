@@ -1,7 +1,8 @@
-import { ADD_TODO, TOGGLE_TODO } from './actions';
+import { combineReducers } from 'redux';
+import { ADD_TODO, TOGGLE_TODO, SET_FILTER } from './actions';
 import { v4 } from 'uuid';
 
-export function todoReducer(state = [],action) {
+function todoReducer(state = [],action) {
     switch (action.type) {
         case ADD_TODO:
             return state.concat({
@@ -21,3 +22,19 @@ export function todoReducer(state = [],action) {
             return state;
     }
 }
+
+function filterReducer(state = 'all',action) {
+    switch (action.type) {
+        case SET_FILTER:
+            return action.filter;
+        default:
+            return state;
+    }
+}
+
+const rootReducer = combineReducers({
+    todo : todoReducer,
+    filter : filterReducer
+});
+
+export default rootReducer;

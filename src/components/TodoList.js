@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CreateTodo from './CreateTodo';
 import TodoItem from './TodoItem';
+import TodoFilter from './TodoFilter';
 import { addTodo } from '../reducer/actions';
 
 class TodoList extends React.Component {
@@ -18,10 +19,11 @@ class TodoList extends React.Component {
                 <CreateTodo create={this.createNewTodo}/>
                 <ul>
                     {
-                        this.props.state.map((cur) => {
+                        this.props.todos.map((cur) => {
                             return (
                                 <TodoItem
                                     key={cur.todoId}
+                                    id={cur.todoId}
                                     name={cur.todoName}
                                     done={cur.isDone}
                                 />
@@ -29,6 +31,7 @@ class TodoList extends React.Component {
                         })
                     }
                 </ul>
+                <TodoFilter/>
             </div>
         );
     }
@@ -36,7 +39,7 @@ class TodoList extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        state : state
+        todos : state.todo
     }
 }
 

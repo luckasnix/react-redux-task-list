@@ -6,7 +6,7 @@ class CreateTodo extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             todoName :  ''
-        }
+        };
     }
     handleChange(evt) {
         this.setState({
