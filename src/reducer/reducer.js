@@ -1,16 +1,17 @@
 import { combineReducers } from 'redux';
+import { createReducer } from 'redux-create-reducer';
 import { ADD_TODO, TOGGLE_TODO, SET_FILTER } from './actions';
 import { v4 } from 'uuid';
 
-function todoReducer(state = [],action) {
-    switch (action.type) {
-        case ADD_TODO:
+const todoReducer = createReducer([],{
+    [ADD_TODO] : (state,action) => {
             return state.concat({
                 todoId : v4(),
                 todoName : action.name,
                 isDone : false
             });
-        case TOGGLE_TODO:
+        },
+    [TOGGLE_TODO] : (state,action) => {
             return state.map((cur) => {
                 if (cur.todoId === action.id) {
                     return {...cur, isDone : !cur.isDone};
@@ -18,19 +19,14 @@ function todoReducer(state = [],action) {
                     return cur;
                 }
             });
-        default:
-            return state;
-    }
-}
+        }
+});
 
-function filterReducer(state = 'all',action) {
-    switch (action.type) {
-        case SET_FILTER:
+const filterReducer = createReducer('all',{
+    [SET_FILTER] : (_,action) => {
             return action.filter;
-        default:
-            return state;
-    }
-}
+        }
+});
 
 const rootReducer = combineReducers({
     todos : todoReducer,
