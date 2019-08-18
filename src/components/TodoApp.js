@@ -1,7 +1,7 @@
-import React from 'react';
-import CreateTodo from './CreateTodo';
-import TodoList from './TodoList';
-import TodoFilter from './TodoFilter';
+import React from 'react'
+import CreateTodo from './CreateTodo'
+import TodoList from './TodoList'
+import TodoFilter from './TodoFilter'
 
 function TodoApp() {
     return (
@@ -10,7 +10,7 @@ function TodoApp() {
             <TodoList/>
             <TodoFilter/>
         </div>
-    );
+    )
 }
 
-export default TodoApp;
+export default TodoApp

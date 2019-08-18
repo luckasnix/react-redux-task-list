@@ -1,13 +1,13 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { setFilter } from '../reducer/actions';
+import React from 'react'
+import { connect } from 'react-redux'
+import { setFilter } from '../reducer/actions'
 
 class TodoFilter extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             selectValue :  'all'
-        };
+        }
     }
     render() {
         return (
@@ -19,8 +19,8 @@ class TodoFilter extends React.Component {
                             this.setState({
                                 selectValue : evt.target.value
                             },() => {
-                                this.props.setFilter(this.state.selectValue);
-                            });
+                                this.props.setFilter(this.state.selectValue)
+                            })
                         }
                     }
                 >
@@ -29,7 +29,7 @@ class TodoFilter extends React.Component {
                     <option value='done'>Tarefas realizadas</option>
                 </select>
             </form>
-        );
+        )
     }
 }
 
@@ -39,4 +39,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(null,mapDispatchToProps)(TodoFilter);
+export default connect(null,mapDispatchToProps)(TodoFilter)

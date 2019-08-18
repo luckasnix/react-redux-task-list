@@ -1,6 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { toggleTodo } from '../reducer/actions';
+import React from 'react'
+import { connect } from 'react-redux'
+import { toggleTodo } from '../reducer/actions'
 
 function TodoItem(props) {
     return (
@@ -8,14 +8,14 @@ function TodoItem(props) {
             {props.name}
             <button onClick={() => { props.toggleTodo(props.id) }}>Mudar status de tarefa</button>
         </li>
-    );
+    )
 }
 
 const styles = {
     lineThrough : {
         textDecoration : 'line-through'
     }
-};
+}
 
 function mapDispatchToProps(dispatch) {
     return {
@@ -23,4 +23,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(null,mapDispatchToProps)(TodoItem);
+export default connect(null,mapDispatchToProps)(TodoItem)

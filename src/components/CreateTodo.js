@@ -1,30 +1,30 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { addTodo } from '../reducer/actions';
+import React from 'react'
+import { connect } from 'react-redux'
+import { addTodo } from '../reducer/actions'
 
 class CreateTodo extends React.Component {
     constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
+        super(props)
+        this.handleChange = this.handleChange.bind(this)
         this.state = {
             todoName :  ''
-        };
+        }
     }
     handleChange(evt) {
         this.setState({
             todoName : evt.target.value
-        });
+        })
     }
     render() {
         return (
             <form 
                 onSubmit={
                     (evt) => {
-                        evt.preventDefault();
+                        evt.preventDefault()
                         this.props.addTodo(this.state.todoName)
                         this.setState({
                             todoName : ''
-                        });
+                        })
                     }
                 }
             >
@@ -38,7 +38,7 @@ class CreateTodo extends React.Component {
                     Adicionar tarefa
                 </button>
             </form>
-        );
+        )
     }
 }
 
@@ -48,4 +48,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(null,mapDispatchToProps)(CreateTodo);
+export default connect(null,mapDispatchToProps)(CreateTodo)

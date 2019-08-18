@@ -1,25 +1,25 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import TodoItem from './TodoItem';
+import React from 'react'
+import { connect } from 'react-redux'
+import TodoItem from './TodoItem'
 
 function showTodos(todosList,activeFilter) {
     switch (activeFilter) {
         case 'all':
-            return todosList;
+            return todosList
         case 'undone':
             return todosList.filter(
                 (cur) => {
-                    return cur.isDone === false;
+                    return cur.isDone === false
                 }
-            );
+            )
         case 'done':
             return todosList.filter(
                 (cur) => {
-                    return cur.isDone === true;
+                    return cur.isDone === true
                 }
-            );
+            )
         default:
-            return todosList;
+            return todosList
     }
 }
 
@@ -35,11 +35,11 @@ function TodoList(props) {
                             name={cur.todoName}
                             done={cur.isDone}
                         />
-                    );
+                    )
                 })
             }
         </ul>
-    );
+    )
 }
 
 function mapStateToProps(state) {
@@ -49,4 +49,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(TodoList);
+export default connect(mapStateToProps)(TodoList)
