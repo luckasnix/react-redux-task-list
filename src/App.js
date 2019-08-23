@@ -1,15 +1,12 @@
 import React from 'react'
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from './reducer/reducer'
-import TodoApp from './components/TodoApp'
-
-const store = createStore(reducer)
+import store from './store/store'
+import TodoPage from './pages/TodoPage'
 
 function App() {
     return (
         <Provider store={store}>
-            <TodoApp/>
+            <TodoPage/>
         </Provider>
     )
 }
