@@ -11,4 +11,5 @@
 }
 .input::placeholder {
   color: #4834d4;
+  opacity: 0.5;
 }

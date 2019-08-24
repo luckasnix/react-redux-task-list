@@ -46,7 +46,7 @@ function ToDoList() {
                                     key={cur.toDoId}
                                     id={cur.toDoId}
                                     name={cur.toDoName}
-                                    done={cur.isDone}
+                                    isDone={cur.isDone}
                                 />
                             )
                         }
