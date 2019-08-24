@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import todoReducer from './todoReducer'
+import toDoReducer from './toDoReducer'
 import filterReducer from './filterReducer'
 
 const rootReducer = combineReducers({
-  todos: todoReducer,
+  toDoList: toDoReducer,
   filter: filterReducer
 })
 

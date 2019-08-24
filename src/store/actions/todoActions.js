@@ -1,12 +1,12 @@
-import * as ActionsTypes from './todoActionsTypes'
+import * as ActionsTypes from './toDoActionsTypes'
 
-export function addTodo(name) {
+export function addToDo(name) {
     return {
         type: ActionsTypes.ADD_TODO,
         name: name
     }
 }
-export function toggleTodo(id) {
+export function toggleToDo(id) {
     return {
         type: ActionsTypes.TOGGLE_TODO,
         id: id

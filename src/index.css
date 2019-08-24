@@ -1,0 +1,12 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+*:focus {
+  outline: none;
+}
+@font-face {
+  font-family: 'Lexend Deca';
+  src: url('./fonts/LexendDeca.ttf')
+}

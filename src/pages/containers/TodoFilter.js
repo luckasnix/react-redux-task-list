@@ -1,8 +1,10 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import ToDoSelect from '../components/ToDoSelect'
 import * as Actions from '../../store/actions/filterActions'
+import styles from './ToDoFilter.module.css'
 
-function TodoFilter() {
+function ToDoFilter() {
     const [selectValue, setSelectValue] = useState('all')
     const dispatch = useDispatch()
     const setFilter = useCallback(
@@ -23,14 +25,20 @@ function TodoFilter() {
         }
     )
     return (
-        <form>
-            <select value={selectValue} onChange={changeTextHandler}>
-                <option value='all'>Todas as tarefas</option>
-                <option value='undone'>Tarefas a se fazer</option>
-                <option value='done'>Tarefas realizadas</option>
-            </select>
-        </form>
+        <div className={styles.container}>
+            <ToDoSelect
+                value={selectValue}
+                onChange={changeTextHandler}
+                data={
+                    [
+                        { value: 'all', title: 'Todas as tarefas' },
+                        { value: 'undone', title: 'Tarefas a se fazer' },
+                        { value: 'done', title: 'Tarefas realizadas' }
+                    ]
+                }
+            />
+        </div>
     )
 }
 
-export default TodoFilter
+export default ToDoFilter

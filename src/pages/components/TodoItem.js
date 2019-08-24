@@ -1,28 +1,45 @@
-import React, { useCallback } from 'react'
-import { useDispatch } from 'react-redux'
-import * as Actions from '../../store/actions/todoActions'
-import styles from './TodoItem.module.css'
+import React, { useState, useCallback } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import * as Actions from '../../store/actions/toDoActions'
+import styles from './ToDoItem.module.css'
 
-function TodoItem(props) {
+function ToDoItem(props) {
+    const isDone = useSelector(
+        (state) => {
+            const curToDo = state.toDoList.filter(
+                (cur) => {
+                    return cur.toDoId === props.id
+                }
+            )
+            return curToDo.isDone
+        }
+    )
+    const [isChecked, setChecked] = useState(isDone)
     const dispatch = useDispatch()
-    const toggleTodo = useCallback(
+    const toggleToDo = useCallback(
         (id) => {
-            dispatch(Actions.toggleTodo(id))
+            dispatch(Actions.toggleToDo(id))
         },
         [dispatch]
     )
-    const clickHandler = useCallback(
+    const checkedHandler = useCallback(
         () => {
-            toggleTodo(props.id)
+            setChecked(!isChecked)
+            toggleToDo(props.id)
         },
-        [toggleTodo, props.id]
+        [isChecked, setChecked, toggleToDo, props.id]
     )
     return (
-        <li className={props.done ? styles.done : null}>
+        <li className={[styles.item, props.done ? styles.done : null].join(' ')}>
             {props.name}
-            <button onClick={clickHandler}>Mudar status de tarefa</button>
+            <input
+                className={styles.checkbox}
+                type='checkbox'
+                checked={isChecked}
+                onChange={checkedHandler}
+            />
         </li>
     )
 }
 
-export default TodoItem
+export default ToDoItem

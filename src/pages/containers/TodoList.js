@@ -1,32 +1,33 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import TodoItem from '../components/TodoItem'
+import ToDoItem from '../components/ToDoItem'
+import styles from './ToDoList.module.css'
 
-function showTodos(todosList, activeFilter) {
-    switch (activeFilter) {
+function showToDoList(list, filter) {
+    switch (filter) {
         case 'all':
-            return todosList
+            return list
         case 'undone':
-            return todosList.filter(
+            return list.filter(
                 (cur) => {
                     return cur.isDone === false
                 }
             )
         case 'done':
-            return todosList.filter(
+            return list.filter(
                 (cur) => {
                     return cur.isDone === true
                 }
             )
         default:
-            return todosList
+            return list
     }
 }
 
-function TodoList() {
-    const todos = useSelector(
+function ToDoList() {
+    const toDoList = useSelector(
         (state) => {
-            return state.todos
+            return state.toDoList
         }
     )
     const filter = useSelector(
@@ -35,23 +36,25 @@ function TodoList() {
         }
     )
     return (
-        <ul>
-            {
-                showTodos(todos, filter).map(
-                    (cur) => {
-                        return (
-                            <TodoItem
-                                key={cur.todoId}
-                                id={cur.todoId}
-                                name={cur.todoName}
-                                done={cur.isDone}
-                            />
-                        )
-                    }
-                )
-            }
-        </ul>
+        <div className={styles.container}>
+            <ul className={styles.list}>
+                {
+                    showToDoList(toDoList, filter).map(
+                        (cur) => {
+                            return (
+                                <ToDoItem
+                                    key={cur.toDoId}
+                                    id={cur.toDoId}
+                                    name={cur.toDoName}
+                                    done={cur.isDone}
+                                />
+                            )
+                        }
+                    )
+                }
+            </ul>
+        </div>
     )
 }
 
-export default TodoList
+export default ToDoList

@@ -1,16 +1,16 @@
 import React from 'react'
-import CreateTodo from './containers/CreateTodo'
-import TodoList from './containers/TodoList'
-import TodoFilter from './containers/TodoFilter'
+import ToDoCreator from './containers/ToDoCreator'
+import ToDoList from './containers/ToDoList'
+import ToDoFilter from './containers/ToDoFilter'
 
-function TodoPage() {
+function ToDoPage() {
     return (
         <div>
-            <CreateTodo/>
-            <TodoList/>
-            <TodoFilter/>
+            <ToDoCreator/>
+            <ToDoList/>
+            <ToDoFilter/>
         </div>
     )
 }
 
-export default TodoPage
+export default ToDoPage
