@@ -1,5 +1,4 @@
 import React from 'react'
-import { v4 } from 'uuid'
 import styles from './ToDoSelect.module.css'
 
 function ToDoSelect(props) {
@@ -8,7 +7,7 @@ function ToDoSelect(props) {
         {
           props.data.map(
             (cur) => {
-              return <option key={v4()} value={cur.value}>{cur.title}</option>
+              return <option key={cur.value} value={cur.value}>{cur.title}</option>
             }
           )
         }
