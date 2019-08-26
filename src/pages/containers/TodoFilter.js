@@ -13,7 +13,7 @@ function ToDoFilter() {
     },
     [dispatch]
   )
-  const changeTextHandler = useCallback(
+  const handleOptionChange = useCallback(
     (evt) => {
       setSelectValue(evt.target.value)
     },
@@ -29,7 +29,7 @@ function ToDoFilter() {
     <div className={styles.container}>
       <ToDoSelect
         value={selectValue}
-        onChange={changeTextHandler}
+        changed={handleOptionChange}
         data={
           [
             { value: 'all', title: 'Todas as tarefas' },

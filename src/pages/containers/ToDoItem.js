@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import ToDoCheckbox from '../components/ToDoCheckbox'
 import * as Actions from '../../store/actions/toDoActions'
 import styles from './ToDoItem.module.css'
 
@@ -12,7 +13,7 @@ function ToDoItem(props) {
     },
     [dispatch]
   )
-  const checkedHandler = useCallback(
+  const handleChecked = useCallback(
     () => {
       setChecked(!isChecked)
     },
@@ -27,12 +28,7 @@ function ToDoItem(props) {
   return (
     <li className={[styles.item, props.isDone ? styles.done : null].join(' ')}>
       {props.name}
-      <input
-        className={styles.checkbox}
-        type='checkbox'
-        checked={isChecked}
-        onChange={checkedHandler}
-      />
+      <ToDoCheckbox checked={isChecked} changed={handleChecked}/>
     </li>
   )
 }

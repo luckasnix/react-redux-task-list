@@ -22,7 +22,7 @@ function ToDoCreator() {
     },
     [toDoName, setToDoName, addToDo]
   )
-  const handleChange = useCallback(
+  const handleInputChange = useCallback(
     (evt) => {
       setToDoName(evt.target.value)
     },
@@ -30,8 +30,8 @@ function ToDoCreator() {
   )
   return (
     <div className={styles.container}>
-      <ToDoInput placeholder='Nova tarefa' value={toDoName} onChange={handleChange}/>
-      <ToDoCreatorBtn title='Adicionar tarefa' onClick={createToDo}/>
+      <ToDoInput placeholder='Nova tarefa' value={toDoName} changed={handleInputChange}/>
+      <ToDoCreatorBtn title='Adicionar tarefa' clicked={createToDo}/>
     </div>
   )
 }

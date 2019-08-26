@@ -1,0 +1,21 @@
+.item {
+  width: 540px;
+  height: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: grid;
+  justify-content: space-between;
+  align-content: center;
+  grid-auto-flow: column;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #686de0;
+  border-radius: 10px;
+  background-color: #dff9fb;
+  font-family: 'Lexend Deca';
+  font-size: 16px;
+  color: #130f40;
+}
+.done {
+  text-decoration: line-through;
+}

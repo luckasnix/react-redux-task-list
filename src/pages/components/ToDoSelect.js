@@ -3,7 +3,7 @@ import styles from './ToDoSelect.module.css'
 
 function ToDoSelect(props) {
   return (
-    <select className={styles.select} value={props.value} onChange={props.onChange}>
+    <select className={styles.select} value={props.value} onChange={props.changed}>
         {
           props.data.map(
             (cur) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import ToDoItem from '../components/ToDoItem'
+import ToDoItem from './ToDoItem'
 import styles from './ToDoList.module.css'
 
 function showFilteredList(list, filter) {
