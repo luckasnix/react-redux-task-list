@@ -4,11 +4,11 @@ import store from './store/store'
 import ToDoPage from './pages/TodoPage'
 
 function App() {
-    return (
-        <Provider store={store}>
-            <ToDoPage/>
-        </Provider>
-    )
+  return (
+    <Provider store={store}>
+      <ToDoPage/>
+    </Provider>
+  )
 }
 
 export default App

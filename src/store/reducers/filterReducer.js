@@ -4,7 +4,7 @@ import * as ActionsTypes from '../actions/filterActionsTypes'
 const filterReducer = createReducer(
   'all',
   {
-      [ActionsTypes.SET_FILTER] : (_,action) => {
+      [ActionsTypes.SET_FILTER]: (_, action) => {
           return action.filter
       }
   }
