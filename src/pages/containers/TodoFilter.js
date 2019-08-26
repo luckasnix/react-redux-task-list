@@ -22,7 +22,8 @@ function ToDoFilter() {
   useEffect(
     () => {
       setFilter(selectValue)
-    }
+    },
+    [setFilter, selectValue]
   )
   return (
     <div className={styles.container}>

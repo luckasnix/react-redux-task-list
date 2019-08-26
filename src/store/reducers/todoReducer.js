@@ -18,7 +18,7 @@ const toDoReducer = createReducer(
       return state.map(
         (cur) => {
           if (cur.toDoId === action.id) {
-            return {...cur, isDone: !cur.isDone}
+            return { ...cur, isDone: action.isDone }
           } else {
             return cur
           }

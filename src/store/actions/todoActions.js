@@ -6,9 +6,10 @@ export function addToDo(name) {
     name: name
   }
 }
-export function toggleToDo(id) {
+export function toggleToDo(id, isDone) {
   return {
     type: ActionsTypes.TOGGLE_TODO,
-    id: id
+    id: id,
+    isDone: isDone
   }
 }
