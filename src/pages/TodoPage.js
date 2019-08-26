@@ -5,11 +5,11 @@ import ToDoFilter from './containers/ToDoFilter'
 
 function ToDoPage() {
   return (
-    <div>
+    <>
       <ToDoCreator/>
       <ToDoList/>
       <ToDoFilter/>
-    </div>
+    </>
   )
 }
 
