@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './ToDoCheckbox.module.css'
 
 function ToDoCheckbox(props) {
@@ -10,6 +11,11 @@ function ToDoCheckbox(props) {
       onChange={props.changed}
     />
   )
+}
+
+ToDoCheckbox.propTypes = {
+  checked: PropTypes.bool.isRequired,
+  changed: PropTypes.func.isRequired
 }
 
 export default ToDoCheckbox

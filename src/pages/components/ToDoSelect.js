@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './ToDoSelect.module.css'
 
 function ToDoSelect(props) {
@@ -13,6 +14,12 @@ function ToDoSelect(props) {
         }
     </select>
   )
+}
+
+ToDoSelect.propTypes = {
+  value: PropTypes.string.isRequired,
+  changed: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default ToDoSelect

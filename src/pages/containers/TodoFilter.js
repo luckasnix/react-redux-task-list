@@ -6,18 +6,18 @@ import styles from './ToDoFilter.module.css'
 
 function ToDoFilter() {
   const [selectValue, setSelectValue] = useState('all')
+  const handleOptionChange = useCallback(
+    (evt) => {
+      setSelectValue(evt.target.value)
+    },
+    [setSelectValue]
+  )
   const dispatch = useDispatch()
   const setFilter = useCallback(
     (filter) => {
       dispatch(Actions.setFilter(filter))
     },
     [dispatch]
-  )
-  const handleOptionChange = useCallback(
-    (evt) => {
-      setSelectValue(evt.target.value)
-    },
-    [setSelectValue]
   )
   useEffect(
     () => {

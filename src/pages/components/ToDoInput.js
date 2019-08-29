@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './ToDoInput.module.css'
 
 function ToDoInput(props) {
@@ -11,6 +12,12 @@ function ToDoInput(props) {
       onChange={props.changed}
     />
   )
+}
+
+ToDoInput.propTypes = {
+  placeholder: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  changed: PropTypes.func.isRequired
 }
 
 export default ToDoInput

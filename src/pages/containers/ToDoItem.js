@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
 import ToDoCheckbox from '../components/ToDoCheckbox'
 import * as Actions from '../../store/actions/toDoActions'
 import styles from './ToDoItem.module.css'
@@ -31,6 +32,12 @@ function ToDoItem(props) {
       <ToDoCheckbox checked={isChecked} changed={handleChecked}/>
     </li>
   )
+}
+
+ToDoItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isDone: PropTypes.bool.isRequired
 }
 
 export default ToDoItem
