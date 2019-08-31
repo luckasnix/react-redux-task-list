@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux'
-import toDoReducer from './toDoReducer'
+import taskReducer from './taskReducer'
 import filterReducer from './filterReducer'
 
-const rootReducer = combineReducers({
-  toDoList: toDoReducer,
-  filter: filterReducer
-})
+const rootReducer = combineReducers(
+  {
+    tasks: taskReducer,
+    filter: filterReducer
+  }
+)
 
 export default rootReducer

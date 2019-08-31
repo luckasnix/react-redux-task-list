@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './ToDoCreatorBtn.module.css'
+import styles from './TaskCreatorBtn.module.css'
 
-function ToDoCreatorBtn(props) {
+function TaskCreatorBtn(props) {
   return (
     <button className={styles.btn} onClick={props.clicked}>{props.title}</button>
   )
 }
 
-ToDoCreatorBtn.propTypes = {
+TaskCreatorBtn.propTypes = {
   clicked: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired
 }
 
-export default ToDoCreatorBtn
+export default TaskCreatorBtn

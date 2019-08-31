@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
-import styles from './ToDoInput.module.css'
+import styles from './TaskInput.module.css'
 
-function ToDoInput(props) {
+function TaskInput(props) {
   const inputRef = useRef(null)
   useEffect(
     () => {
-      console.log(inputRef)
       inputRef.current.focus()
     },
     []
@@ -23,10 +22,10 @@ function ToDoInput(props) {
   )
 }
 
-ToDoInput.propTypes = {
+TaskInput.propTypes = {
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
   changed: PropTypes.func.isRequired
 }
 
-export default ToDoInput
+export default TaskInput

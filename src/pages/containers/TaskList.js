@@ -1,22 +1,22 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import ToDoItem from './ToDoItem'
-import styles from './ToDoList.module.css'
+import TaskItem from './TaskItem'
+import styles from './TaskList.module.css'
 
 function showFilteredList(list, filter) {
   switch (filter) {
     case 'all':
       return list
-    case 'undone':
+    case 'incompleted':
       return list.filter(
         (cur) => {
-          return cur.isDone === false
+          return cur.completed === false
         }
       )
-    case 'done':
+    case 'completed':
       return list.filter(
         (cur) => {
-          return cur.isDone === true
+          return cur.completed === true
         }
       )
     default:
@@ -24,10 +24,10 @@ function showFilteredList(list, filter) {
   }
 }
 
-function ToDoList() {
-  const toDoList = useSelector(
+function TaskList() {
+  const tasks = useSelector(
     (state) => {
-      return state.toDoList
+      return state.tasks
     }
   )
   const filter = useSelector(
@@ -39,14 +39,14 @@ function ToDoList() {
     <div className={styles.container}>
       <ul className={styles.list}>
         {
-          showFilteredList(toDoList, filter).map(
+          showFilteredList(tasks, filter).map(
             (cur) => {
               return (
-                <ToDoItem
-                  key={cur.toDoId}
-                  id={cur.toDoId}
-                  name={cur.toDoName}
-                  isDone={cur.isDone}
+                <TaskItem
+                  key={cur.taskId}
+                  id={cur.taskId}
+                  name={cur.taskName}
+                  completed={cur.completed}
                 />
               )
             }
@@ -57,4 +57,4 @@ function ToDoList() {
   )
 }
 
-export default ToDoList
+export default TaskList

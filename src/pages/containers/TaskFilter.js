@@ -1,10 +1,10 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import ToDoSelect from '../components/ToDoSelect'
+import TaskSelect from '../components/TaskSelect'
 import * as Actions from '../../store/actions/filterActions'
-import styles from './ToDoFilter.module.css'
+import styles from './TaskFilter.module.css'
 
-function ToDoFilter() {
+function TaskFilter() {
   const [selectValue, setSelectValue] = useState('all')
   const handleOptionChange = useCallback(
     (evt) => {
@@ -27,14 +27,14 @@ function ToDoFilter() {
   )
   return (
     <div className={styles.container}>
-      <ToDoSelect
+      <TaskSelect
         value={selectValue}
         changed={handleOptionChange}
         data={
           [
             { value: 'all', title: 'Todas as tarefas' },
-            { value: 'undone', title: 'Tarefas a se fazer' },
-            { value: 'done', title: 'Tarefas realizadas' }
+            { value: 'incompleted', title: 'Tarefas a se fazer' },
+            { value: 'completed', title: 'Tarefas realizadas' }
           ]
         }
       />
@@ -42,4 +42,4 @@ function ToDoFilter() {
   )
 }
 
-export default ToDoFilter
+export default TaskFilter

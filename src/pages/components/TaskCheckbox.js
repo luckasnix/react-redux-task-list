@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './ToDoCheckbox.module.css'
+import styles from './TaskCheckbox.module.css'
 
-function ToDoCheckbox(props) {
+function TaskCheckbox(props) {
   return (
     <input
       className={styles.checkbox}
@@ -13,9 +13,9 @@ function ToDoCheckbox(props) {
   )
 }
 
-ToDoCheckbox.propTypes = {
+TaskCheckbox.propTypes = {
   checked: PropTypes.bool.isRequired,
   changed: PropTypes.func.isRequired
 }
 
-export default ToDoCheckbox
+export default TaskCheckbox
