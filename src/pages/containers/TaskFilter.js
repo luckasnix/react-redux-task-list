@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import TaskSelect from '../components/TaskSelect'
+import TaskSelect from './components/TaskSelect'
 import * as Actions from '../../store/actions/filterActions'
 import styles from './TaskFilter.module.css'
 

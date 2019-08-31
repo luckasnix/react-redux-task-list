@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { useDispatch } from 'react-redux'
-import TaskInput from '../components/TaskInput'
-import TaskCreatorBtn from '../components/TaskCreatorBtn'
+import TaskInput from './components/TaskInput'
+import TaskCreatorBtn from './components/TaskCreatorBtn'
 import * as Actions from '../../store/actions/taskActions'
 import styles from './TaskCreator.module.css'
 
