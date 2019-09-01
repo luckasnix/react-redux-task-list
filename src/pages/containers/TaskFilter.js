@@ -33,7 +33,7 @@ function TaskFilter() {
         data={
           [
             { value: 'all', title: 'Todas as tarefas' },
-            { value: 'incompleted', title: 'Tarefas a se fazer' },
+            { value: 'active', title: 'Tarefas a se fazer' },
             { value: 'completed', title: 'Tarefas realizadas' }
           ]
         }

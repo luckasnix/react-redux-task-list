@@ -7,7 +7,7 @@ function showFilteredList(list, filter) {
   switch (filter) {
     case 'all':
       return list
-    case 'incompleted':
+    case 'active':
       return list.filter(
         (cur) => {
           return cur.completed === false
