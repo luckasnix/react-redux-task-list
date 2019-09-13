@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 import TaskCheckbox from './components/TaskCheckbox'
-import * as Actions from '../../store/actions/taskActions'
+import * as Actions from '../../store/reducers/actions/taskActions'
 import styles from './TaskItem.module.css'
 
 function TaskItem(props) {

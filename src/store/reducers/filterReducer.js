@@ -1,10 +1,12 @@
 import { createReducer } from 'redux-create-reducer'
-import * as ActionsTypes from '../actions/filterActionsTypes'
+import * as Types from './actions/types/filterTypes'
+
+const initState = 'all'
 
 const filterReducer = createReducer(
-  'all',
+  initState,
   {
-      [ActionsTypes.SET_FILTER]: (_, action) => {
+      [Types.SET_FILTER]: (_, action) => {
           return action.filter
       }
   }

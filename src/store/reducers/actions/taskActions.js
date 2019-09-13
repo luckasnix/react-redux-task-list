@@ -1,14 +1,14 @@
-import * as ActionsTypes from './taskActionsTypes'
+import * as Types from './types/taskTypes'
 
 export function addTask(name) {
   return {
-    type: ActionsTypes.ADD_TASK,
+    type: Types.ADD_TASK,
     name: name
   }
 }
 export function toggleTask(id, completed) {
   return {
-    type: ActionsTypes.TOGGLE_TASK,
+    type: Types.TOGGLE_TASK,
     id: id,
     completed: completed
   }

@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import TaskSelect from './components/TaskSelect'
-import * as Actions from '../../store/actions/filterActions'
+import * as Actions from '../../store/reducers/actions/filterActions'
 import styles from './TaskFilter.module.css'
 
 function TaskFilter() {
