@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import TaskItem from './TaskItem'
+import TaskModal from './TaskModal'
 import styles from './TaskList.module.css'
 
 function showFilteredList(list, filter) {
@@ -35,6 +36,21 @@ function TaskList() {
       return state.filter
     }
   )
+  const [modalVisibility, setModalVisibility] = useState(false)
+  const [currentTask, setCurrentTask] = useState(null)
+  const handleNameChanged = useCallback(
+    (id) => {
+      setCurrentTask(id)
+      setModalVisibility(true)
+    },
+    [setCurrentTask]
+  )
+  const handleClosure = useCallback(
+    () => {
+      setModalVisibility(false)
+    },
+    [setModalVisibility]
+  )
   return (
     <div className={styles.container}>
       <ul className={styles.list}>
@@ -43,16 +59,18 @@ function TaskList() {
             (cur) => {
               return (
                 <TaskItem
-                  key={cur.taskId}
-                  id={cur.taskId}
-                  name={cur.taskName}
+                  key={cur.id}
+                  id={cur.id}
+                  name={cur.name}
                   completed={cur.completed}
+                  clicked={() => { handleNameChanged(cur.id) }}
                 />
               )
             }
           )
         }
       </ul>
+      {modalVisibility && <TaskModal task={currentTask} closure={handleClosure}/>}
     </div>
   )
 }

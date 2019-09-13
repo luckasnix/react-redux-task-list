@@ -6,10 +6,19 @@ export function addTask(name) {
     name: name
   }
 }
-export function toggleTask(id, completed) {
+
+export function toggleStatus(id, completed) {
   return {
-    type: Types.TOGGLE_TASK,
+    type: Types.TOGGLE_STATUS,
     id: id,
     completed: completed
+  }
+}
+
+export function updateName(id, name) {
+  return {
+    type: Types.UPDATE_NAME,
+    id: id,
+    name: name
   }
 }

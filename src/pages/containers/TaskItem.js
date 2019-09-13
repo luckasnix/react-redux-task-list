@@ -8,9 +8,9 @@ import styles from './TaskItem.module.css'
 function TaskItem(props) {
   const [isChecked, setChecked] = useState(props.completed)
   const dispatch = useDispatch()
-  const toggleTask = useCallback(
+  const toggleStatus = useCallback(
     (id, completed) => {
-      dispatch(Actions.toggleTask(id, completed))
+      dispatch(Actions.toggleStatus(id, completed))
     },
     [dispatch]
   )
@@ -22,13 +22,13 @@ function TaskItem(props) {
   )
   useEffect(
     () => {
-      toggleTask(props.id, isChecked)
+      toggleStatus(props.id, isChecked)
     },
-    [toggleTask, props.id, isChecked]
+    [toggleStatus, props.id, isChecked]
   )
   return (
     <li className={[styles.item, props.completed ? styles.completed : null].join(' ')}>
-      {props.name}
+      <p onClick={props.clicked}>{props.name}</p>
       <TaskCheckbox checked={isChecked} changed={handleChecked}/>
     </li>
   )

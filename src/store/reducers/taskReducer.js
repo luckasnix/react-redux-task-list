@@ -10,17 +10,28 @@ const taskReducer = createReducer(
     [Types.ADD_TASK]: (state, action) => {
       return state.concat(
         {
-          taskId: v4(),
-          taskName: action.name,
+          id: v4(),
+          name: action.name,
           completed: false
         }
       )
     },
-    [Types.TOGGLE_TASK]: (state, action) => {
+    [Types.TOGGLE_STATUS]: (state, action) => {
       return state.map(
         (cur) => {
-          if (cur.taskId === action.id) {
+          if(cur.id === action.id) {
             return { ...cur, completed: action.completed }
+          } else {
+            return cur
+          }
+        }
+      )
+    },
+    [Types.UPDATE_NAME]: (state, action) => {
+      return state.map(
+        (cur) => {
+          if(cur.id === action.id) {
+            return { ...cur, name: action.name }
           } else {
             return cur
           }

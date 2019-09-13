@@ -12,9 +12,12 @@
   border-color: #686de0;
   border-radius: 10px;
   background-color: #dff9fb;
+}
+.item p {
   font-family: 'Lexend Deca';
   font-size: 16px;
   color: #130f40;
+  cursor: pointer;
 }
 .completed {
   text-decoration: line-through;

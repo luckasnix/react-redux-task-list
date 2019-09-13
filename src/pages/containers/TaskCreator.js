@@ -1,12 +1,18 @@
 import React, { useState, useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import TaskInput from './components/TaskInput'
-import TaskCreatorBtn from './components/TaskCreatorBtn'
+import TaskCreatorButton from './components/TaskCreatorButton'
 import * as Actions from '../../store/reducers/actions/taskActions'
 import styles from './TaskCreator.module.css'
 
 function TaskCreator() {
   const [taskName, setTaskName] = useState('')
+  const handleNameChange = useCallback(
+    (evt) => {
+      setTaskName(evt.target.value)
+    },
+    [setTaskName]
+  )
   const dispatch = useDispatch()
   const addTask = useCallback(
     (name) => {
@@ -22,16 +28,12 @@ function TaskCreator() {
     },
     [taskName, setTaskName, addTask]
   )
-  const handleInputChange = useCallback(
-    (evt) => {
-      setTaskName(evt.target.value)
-    },
-    [setTaskName]
-  )
   return (
     <div className={styles.container}>
-      <TaskInput placeholder='Nova tarefa' value={taskName} changed={handleInputChange}/>
-      <TaskCreatorBtn title='Adicionar tarefa' clicked={createTask}/>
+      <form onSubmit={createTask}>
+        <TaskInput placeholder='Nova tarefa' value={taskName} changed={handleNameChange}/>
+        <TaskCreatorButton title='Adicionar tarefa'/>
+      </form>
     </div>
   )
 }
