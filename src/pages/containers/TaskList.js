@@ -45,7 +45,7 @@ function TaskList() {
     },
     [setCurrentTask]
   )
-  const handleClosure = useCallback(
+  const handleClosed = useCallback(
     () => {
       setModalVisibility(false)
     },
@@ -70,7 +70,7 @@ function TaskList() {
           )
         }
       </ul>
-      {modalVisibility && <TaskModal task={currentTask} closure={handleClosure}/>}
+      {modalVisibility && <TaskModal task={currentTask} closed={handleClosed}/>}
     </div>
   )
 }

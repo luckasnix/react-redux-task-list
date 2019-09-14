@@ -3,15 +3,15 @@
   width: 40px;
   height: 20px;
   border-radius: 10px;
-  background-color: #c7ecee;
-  box-shadow: inset 0px 0px 4px 2px #95afc0ff;
+  background-color: #EEECFB;
+  box-shadow: inset 0px 0px 4px 2px #ABA2EB;
   appearance: none;
   cursor: pointer;
   transition: 400ms;
 }
 .checkbox:checked {
-  background-color: #686de0;
-  box-shadow: inset 0px 0px 4px 2px #4834d4ff;
+  background-color: #8A7DE3;
+  box-shadow: inset 0px 0px 4px 2px #4834D4;
 }
 .checkbox::before {
   position: absolute;
@@ -21,7 +21,8 @@
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  background-color: #130f40;
+  background-color: #4834D4;
+  box-shadow: inset 0px 0px 4px 2px #2E2287;
   transform: scale(1.1);
   transition: 400ms;
 }

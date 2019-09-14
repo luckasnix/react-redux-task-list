@@ -5,9 +5,8 @@
   width: 100%;
   height: calc(100vh - 160px);
   padding: 40px 60px;
-  background-color: #dff9fb;
+  background-color: #DFF9FB;
   overflow-y: scroll;
-  scrollbar-base-color: #130f40;
 }
 .list {
   width: 100%;

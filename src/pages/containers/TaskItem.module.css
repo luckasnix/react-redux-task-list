@@ -9,14 +9,14 @@
   grid-auto-flow: column;
   border-width: 2px;
   border-style: solid;
-  border-color: #686de0;
+  border-color: #8A7DE3;
   border-radius: 10px;
-  background-color: #dff9fb;
+  background-color: #DFF9FB;
 }
 .item p {
   font-family: 'Lexend Deca';
   font-size: 16px;
-  color: #130f40;
+  color: #211861;
   cursor: pointer;
 }
 .completed {

@@ -15,7 +15,7 @@
   top: calc(50vh - 80px);
   left: calc(50vw - 400px);
   border-radius: 10px;
-  background-color: #4834d4;
+  background-color: #4834D4;
   z-index: 999;
 }
 .modal form {
@@ -27,7 +27,7 @@
   grid-auto-flow: column;
   grid-gap: 20px;
 }
-.closureButton {
+.closedButton {
   width: 30px;
   height: 30px;
   position: absolute;
@@ -35,9 +35,9 @@
   right: 10px;
   border: none;
   border-radius: 50%;
-  background-color: #dff9fb;
+  background-color: #DFF9FB;
   font-family: 'Lexend Deca';
   font-size: 16px;
-  color: #4834d4;
+  color: #4834D4;
   cursor: pointer;
 }

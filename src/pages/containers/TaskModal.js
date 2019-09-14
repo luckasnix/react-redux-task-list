@@ -24,16 +24,16 @@ function TaskModal(props) {
     (evt) => {
       evt.preventDefault()
       updateName(props.task, taskName)
-      props.closure()
+      props.closed()
     },
     [updateName, props, taskName]
   )
   return (
     <>
-      <div className={styles.blackdrop} onClick={props.closure}/>
+      <div className={styles.blackdrop} onClick={props.closed}/>
       <div className={styles.modal}>
         <form onSubmit={updateTaskName}>
-          <button className={styles.closureButton} onClick={props.closure}>X</button>
+          <button className={styles.closedButton} onClick={props.closed}>X</button>
           <TaskInput placeholder='Novo nome' value={taskName} changed={handleNameChange}/>
           <TaskCreatorButton title='Atualizar tarefa'/>
         </form>

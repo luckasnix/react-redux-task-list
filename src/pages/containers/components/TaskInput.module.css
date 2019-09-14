@@ -4,12 +4,12 @@
   padding-left: 10px;
   border: none;
   border-radius: 10px;
-  background-color: #dff9fb;
+  background-color: #DFF9FB;
   font-family: 'Lexend Deca';
   font-size: 16px;
-  color: #4834d4;
+  color: #4834D4;
 }
 .input::placeholder {
-  color: #4834d4;
+  color: #4834D4;
   opacity: 0.5;
 }
