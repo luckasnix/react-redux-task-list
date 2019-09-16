@@ -33,10 +33,10 @@ function TaskModal(props) {
       <div className={styles.blackdrop} onClick={props.closed}/>
       <div className={styles.modal}>
         <form onSubmit={updateTaskName}>
-          <button className={styles.closedButton} onClick={props.closed}>X</button>
           <TaskInput placeholder='Novo nome' value={taskName} changed={handleNameChange}/>
           <TaskCreatorButton title='Atualizar tarefa'/>
         </form>
+        <button className={styles.closedButton} onClick={props.closed}>X</button>
       </div>
     </>
   )

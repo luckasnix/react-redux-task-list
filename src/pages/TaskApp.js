@@ -3,7 +3,7 @@ import TaskCreator from './containers/TaskCreator'
 import TaskList from './containers/TaskList'
 import TaskFilter from './containers/TaskFilter'
 
-function TaskPage() {
+function TaskApp() {
   return (
     <>
       <TaskCreator/>
@@ -13,4 +13,4 @@ function TaskPage() {
   )
 }
 
-export default TaskPage
+export default TaskApp

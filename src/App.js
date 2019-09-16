@@ -1,12 +1,12 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import store from './store/store'
-import TaskPage from './pages/TaskPage'
+import TaskApp from './pages/TaskApp'
 
 function App() {
   return (
     <Provider store={store}>
-      <TaskPage/>
+      <TaskApp/>
     </Provider>
   )
 }

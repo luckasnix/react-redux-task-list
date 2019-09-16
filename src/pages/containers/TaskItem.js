@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 import TaskCheckbox from './components/TaskCheckbox'
+import TaskDestructor from './components/TaskDestructor'
 import * as Actions from '../../store/reducers/actions/taskActions'
 import styles from './TaskItem.module.css'
 
@@ -26,10 +27,19 @@ function TaskItem(props) {
     },
     [toggleStatus, props.id, isChecked]
   )
+  const deleteTask = useCallback(
+    (id) => {
+      dispatch(Actions.deleteTask(id))
+    },
+    [dispatch]
+  )
   return (
     <li className={[styles.item, props.completed ? styles.completed : null].join(' ')}>
       <p onClick={props.clicked}>{props.name}</p>
-      <TaskCheckbox checked={isChecked} changed={handleChecked}/>
+      <div className={styles.controlButtons}>
+        <TaskCheckbox checked={isChecked} changed={handleChecked}/>
+        <TaskDestructor icon='X' clicked={() => { deleteTask(props.id) }}/>
+      </div>
     </li>
   )
 }

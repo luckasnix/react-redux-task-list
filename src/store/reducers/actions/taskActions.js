@@ -7,6 +7,13 @@ export function addTask(name) {
   }
 }
 
+export function deleteTask(id) {
+  return {
+    type: Types.DELETE_TASK,
+    id: id
+  }
+}
+
 export function toggleStatus(id, completed) {
   return {
     type: Types.TOGGLE_STATUS,

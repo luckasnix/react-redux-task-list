@@ -16,6 +16,13 @@ const taskReducer = createReducer(
         }
       )
     },
+    [Types.DELETE_TASK]: (state, action) => {
+      return state.filter(
+        (cur) => {
+          return cur.id !== action.id
+        }
+      )
+    },
     [Types.TOGGLE_STATUS]: (state, action) => {
       return state.map(
         (cur) => {

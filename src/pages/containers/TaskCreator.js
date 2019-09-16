@@ -23,8 +23,10 @@ function TaskCreator() {
   const createTask = useCallback(
     (evt) => {
       evt.preventDefault()
-      addTask(taskName)
-      setTaskName('')
+      if(taskName !== '') {
+        addTask(taskName)
+        setTaskName('')
+      }
     },
     [taskName, setTaskName, addTask]
   )
