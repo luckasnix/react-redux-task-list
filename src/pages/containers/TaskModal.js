@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import TaskInput from './components/TaskInput'
 import TaskCreatorButton from './components/TaskCreatorButton'
+import TaskModalButton from './components/TaskModalButton'
 import * as Actions from '../../store/reducers/actions/taskActions'
 import styles from './TaskModal.module.css'
 
@@ -36,7 +37,7 @@ function TaskModal(props) {
           <TaskInput placeholder='Novo nome' value={taskName} changed={handleNameChange}/>
           <TaskCreatorButton title='Atualizar tarefa'/>
         </form>
-        <button className={styles.closedButton} onClick={props.closed}>X</button>
+        <TaskModalButton icon='X' clicked={props.closed}/>
       </div>
     </>
   )

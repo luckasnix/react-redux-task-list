@@ -38,7 +38,7 @@ function TaskList() {
   )
   const [modalVisibility, setModalVisibility] = useState(false)
   const [currentTask, setCurrentTask] = useState(null)
-  const handleNameChanged = useCallback(
+  const handleOpened = useCallback(
     (id) => {
       setCurrentTask(id)
       setModalVisibility(true)
@@ -63,7 +63,7 @@ function TaskList() {
                   id={cur.id}
                   name={cur.name}
                   completed={cur.completed}
-                  clicked={() => { handleNameChanged(cur.id) }}
+                  opened={() => { handleOpened(cur.id) }}
                 />
               )
             }

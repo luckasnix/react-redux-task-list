@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './TaskDestructor.module.css'
+import styles from './TaskItemButton.module.css'
 
-function TaskDestructor(props) {
+function TaskItemButton(props) {
   return (
     <button
       className={styles.button}
@@ -13,9 +13,9 @@ function TaskDestructor(props) {
   )
 }
 
-TaskDestructor.propTypes = {
+TaskItemButton.propTypes = {
   icon: PropTypes.string.isRequired,
   clicked: PropTypes.func.isRequired
 }
 
-export default TaskDestructor
+export default TaskItemButton

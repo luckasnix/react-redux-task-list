@@ -17,9 +17,8 @@
   font-family: 'Lexend Deca';
   font-size: 16px;
   color: #211861;
-  cursor: pointer;
 }
-.completed {
+.completed p {
   text-decoration: line-through;
 }
 .controlButtons {
