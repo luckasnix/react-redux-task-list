@@ -14,7 +14,7 @@ function TaskItemButton(props) {
 }
 
 TaskItemButton.propTypes = {
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.object.isRequired,
   clicked: PropTypes.func.isRequired
 }
 

@@ -6,3 +6,10 @@
   background-color: #4834D4;
   cursor: pointer;
 }
+.button svg {
+  width: 50%;
+  height: 50%;
+}
+.button svg path {
+  fill: #EEECFB;
+}

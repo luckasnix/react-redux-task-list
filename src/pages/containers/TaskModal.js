@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import TaskInput from './components/TaskInput'
 import TaskCreatorButton from './components/TaskCreatorButton'
 import TaskModalButton from './components/TaskModalButton'
+import { ReactComponent as CloseIcon } from '../../assets/images/close_icon.svg'
 import * as Actions from '../../store/reducers/actions/taskActions'
 import styles from './TaskModal.module.css'
 
@@ -38,7 +39,7 @@ function TaskModal(props) {
           <TaskInput placeholder='Novo nome' value={taskName} changed={handleNameChange}/>
           <TaskCreatorButton title='Atualizar tarefa'/>
         </form>
-        <TaskModalButton icon='X' clicked={props.closed}/>
+        <TaskModalButton icon={<CloseIcon/>} clicked={props.closed}/>
       </div>
     </>
   )

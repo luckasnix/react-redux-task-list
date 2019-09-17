@@ -1,14 +1,18 @@
 .button {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   position: absolute;
   top: 10px;
   right: 10px;
   border: none;
   border-radius: 50%;
   background-color: #DFF9FB;
-  font-family: 'Lexend Deca';
-  font-size: 16px;
-  color: #4834D4;
   cursor: pointer;
+}
+.button svg {
+  width: 50%;
+  height: 50%;
+}
+.button svg path {
+  fill: #4834D4;
 }

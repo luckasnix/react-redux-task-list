@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 import TaskCheckbox from './components/TaskCheckbox'
 import TaskItemButton from './components/TaskItemButton'
+import { ReactComponent as RenameIcon } from '../../assets/images/rename_icon.svg'
+import { ReactComponent as CloseIcon } from '../../assets/images/close_icon.svg'
 import * as Actions from '../../store/reducers/actions/taskActions'
 import styles from './TaskItem.module.css'
 
@@ -43,9 +45,9 @@ function TaskItem(props) {
     <li className={[styles.item, props.completed ? styles.completed : null].join(' ')}>
       <p>{props.name}</p>
       <div className={styles.controlButtons}>
-        <TaskItemButton icon='R' clicked={props.opened}/>
+        <TaskItemButton icon={<RenameIcon/>} clicked={props.opened}/>
         <TaskCheckbox checked={isChecked} changed={handleChecked}/>
-        <TaskItemButton icon='X' clicked={() => { handleTaskDeleted(props.id) }}/>
+        <TaskItemButton icon={<CloseIcon/>} clicked={() => { handleTaskDeleted(props.id) }}/>
       </div>
     </li>
   )
