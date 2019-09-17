@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './TaskModalButton.module.css'
 
 function TaskModalButton(props) {
