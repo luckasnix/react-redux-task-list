@@ -9,9 +9,9 @@ import styles from './TaskItem.module.css'
 function TaskItem(props) {
   const [isChecked, setChecked] = useState(props.completed)
   const dispatch = useDispatch()
-  const toggleStatus = useCallback(
+  const updateTaskStatus = useCallback(
     (id, completed) => {
-      dispatch(Actions.toggleStatus(id, completed))
+      dispatch(Actions.updateTaskStatus(id, completed))
     },
     [dispatch]
   )
@@ -23,9 +23,9 @@ function TaskItem(props) {
   )
   useEffect(
     () => {
-      toggleStatus(props.id, isChecked)
+      updateTaskStatus(props.id, isChecked)
     },
-    [toggleStatus, props.id, isChecked]
+    [updateTaskStatus, props.id, isChecked]
   )
   const deleteTask = useCallback(
     (id) => {
@@ -33,7 +33,7 @@ function TaskItem(props) {
     },
     [dispatch]
   )
-  const deleteCurrentTask = useCallback(
+  const handleTaskDeleted = useCallback(
     (id) => {
       deleteTask(id)
     },
@@ -45,7 +45,7 @@ function TaskItem(props) {
       <div className={styles.controlButtons}>
         <TaskItemButton icon='R' clicked={props.opened}/>
         <TaskCheckbox checked={isChecked} changed={handleChecked}/>
-        <TaskItemButton icon='X' clicked={() => { deleteCurrentTask(props.id) }}/>
+        <TaskItemButton icon='X' clicked={() => { handleTaskDeleted(props.id) }}/>
       </div>
     </li>
   )

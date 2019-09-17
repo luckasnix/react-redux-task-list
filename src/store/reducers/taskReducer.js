@@ -7,7 +7,7 @@ const initState = []
 const taskReducer = createReducer(
   initState,
   {
-    [Types.ADD_TASK]: (state, action) => {
+    [Types.CREATE_TASK]: (state, action) => {
       return state.concat(
         {
           id: v4(),
@@ -16,14 +16,7 @@ const taskReducer = createReducer(
         }
       )
     },
-    [Types.DELETE_TASK]: (state, action) => {
-      return state.filter(
-        (cur) => {
-          return cur.id !== action.id
-        }
-      )
-    },
-    [Types.TOGGLE_STATUS]: (state, action) => {
+    [Types.UPDATE_TASK_STATUS]: (state, action) => {
       return state.map(
         (cur) => {
           if(cur.id === action.id) {
@@ -34,7 +27,7 @@ const taskReducer = createReducer(
         }
       )
     },
-    [Types.UPDATE_NAME]: (state, action) => {
+    [Types.UPDATE_TASK_NAME]: (state, action) => {
       return state.map(
         (cur) => {
           if(cur.id === action.id) {
@@ -42,6 +35,13 @@ const taskReducer = createReducer(
           } else {
             return cur
           }
+        }
+      )
+    },
+    [Types.DELETE_TASK]: (state, action) => {
+      return state.filter(
+        (cur) => {
+          return cur.id !== action.id
         }
       )
     }

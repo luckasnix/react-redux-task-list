@@ -14,25 +14,25 @@ function TaskCreator() {
     [setTaskName]
   )
   const dispatch = useDispatch()
-  const addTask = useCallback(
+  const createTask = useCallback(
     (name) => {
-      dispatch(Actions.addTask(name))
+      dispatch(Actions.createTask(name))
     },
     [dispatch]
   )
-  const createTask = useCallback(
+  const handleTaskCreated = useCallback(
     (evt) => {
       evt.preventDefault()
       if(taskName !== '') {
-        addTask(taskName)
+        createTask(taskName)
         setTaskName('')
       }
     },
-    [taskName, setTaskName, addTask]
+    [createTask, taskName, setTaskName]
   )
   return (
     <div className={styles.container}>
-      <form onSubmit={createTask}>
+      <form onSubmit={handleTaskCreated}>
         <TaskInput placeholder='Nova tarefa' value={taskName} changed={handleNameChange}/>
         <TaskCreatorButton title='Adicionar tarefa'/>
       </form>

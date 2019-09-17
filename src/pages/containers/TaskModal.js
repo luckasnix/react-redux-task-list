@@ -15,25 +15,25 @@ function TaskModal(props) {
     [setTaskName]
   )
   const dispatch = useDispatch()
-  const updateName = useCallback(
+  const updateTaskName = useCallback(
     (id, name) => {
-      dispatch(Actions.updateName(id, name))
+      dispatch(Actions.updateTaskName(id, name))
     },
     [dispatch]
   )
-  const updateTaskName = useCallback(
+  const handleTaskNameUpdated = useCallback(
     (evt) => {
       evt.preventDefault()
-      updateName(props.task, taskName)
+      updateTaskName(props.task, taskName)
       props.closed()
     },
-    [updateName, props, taskName]
+    [updateTaskName, props, taskName]
   )
   return (
     <>
       <div className={styles.blackdrop} onClick={props.closed}/>
       <div className={styles.modal}>
-        <form onSubmit={updateTaskName}>
+        <form onSubmit={handleTaskNameUpdated}>
           <TaskInput placeholder='Novo nome' value={taskName} changed={handleNameChange}/>
           <TaskCreatorButton title='Atualizar tarefa'/>
         </form>

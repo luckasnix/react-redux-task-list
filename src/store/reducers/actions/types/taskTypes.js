@@ -1,4 +1,4 @@
-export const ADD_TASK = 'ADD_TASK'
+export const CREATE_TASK = 'CREATE_TASK'
+export const UPDATE_TASK_STATUS = 'UPDATE_TASK_STATUS'
+export const UPDATE_TASK_NAME = 'UPDATE_TASK_NAME'
 export const DELETE_TASK = 'DELETE_TASK'
-export const TOGGLE_STATUS = 'TOGGLE_STATUS'
-export const UPDATE_NAME = 'UPDATE_NAME'
