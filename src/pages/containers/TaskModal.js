@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { useDispatch } from 'react-redux'
+import PropTypes from 'prop-types'
 import TaskInput from './components/TaskInput'
 import TaskCreatorButton from './components/TaskCreatorButton'
 import TaskModalButton from './components/TaskModalButton'
@@ -41,6 +42,11 @@ function TaskModal(props) {
       </div>
     </>
   )
+}
+
+TaskModal.propTypes = {
+  task: PropTypes.string.isRequired,
+  closed: PropTypes.func.isRequired
 }
 
 export default TaskModal

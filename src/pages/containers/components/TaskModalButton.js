@@ -12,4 +12,9 @@ function TaskModalButton(props) {
   )
 }
 
+TaskModalButton.propTypes = {
+  icon: PropTypes.string.isRequired,
+  clicked: PropTypes.func.isRequired
+}
+
 export default TaskModalButton
