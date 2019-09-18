@@ -37,13 +37,15 @@ function TaskList() {
     }
   )
   const [modalVisibility, setModalVisibility] = useState(false)
-  const [currentTask, setCurrentTask] = useState(null)
+  const [currentTaskId, setCurrentTaskId] = useState(null)
+  const [currentTaskName, setCurrentTaskName] = useState(null)
   const handleOpened = useCallback(
-    (id) => {
-      setCurrentTask(id)
+    (id, name) => {
+      setCurrentTaskId(id)
+      setCurrentTaskName(name)
       setModalVisibility(true)
     },
-    [setCurrentTask]
+    [setCurrentTaskId, setCurrentTaskName, setModalVisibility]
   )
   const handleClosed = useCallback(
     () => {
@@ -63,14 +65,14 @@ function TaskList() {
                   id={cur.id}
                   name={cur.name}
                   completed={cur.completed}
-                  opened={() => { handleOpened(cur.id) }}
+                  opened={() => { handleOpened(cur.id, cur.name) }}
                 />
               )
             }
           )
         }
       </ul>
-      {modalVisibility && <TaskModal task={currentTask} closed={handleClosed}/>}
+      {modalVisibility && <TaskModal id={currentTaskId} name={currentTaskName} closed={handleClosed}/>}
     </div>
   )
 }

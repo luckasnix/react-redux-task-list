@@ -9,7 +9,7 @@ import * as Actions from '../../store/reducers/actions/taskActions'
 import styles from './TaskModal.module.css'
 
 function TaskModal(props) {
-  const [taskName, setTaskName] = useState('')
+  const [taskName, setTaskName] = useState(props.name)
   const handleNameChange = useCallback(
     (evt) => {
       setTaskName(evt.target.value)
@@ -26,7 +26,7 @@ function TaskModal(props) {
   const handleTaskNameUpdated = useCallback(
     (evt) => {
       evt.preventDefault()
-      updateTaskName(props.task, taskName)
+      updateTaskName(props.id, taskName)
       props.closed()
     },
     [updateTaskName, props, taskName]
@@ -46,7 +46,8 @@ function TaskModal(props) {
 }
 
 TaskModal.propTypes = {
-  task: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   closed: PropTypes.func.isRequired
 }
 
