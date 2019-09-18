@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './TaskItemButton.module.css'
 
-function TaskItemButton(props) {
+function TaskItemButton({ icon, clicked }) {
   return (
     <button
       className={styles.button}
-      onClick={props.clicked}
+      onClick={clicked}
     >
-      {props.icon}
+      {icon}
     </button>
   )
 }

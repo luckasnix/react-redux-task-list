@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './TaskSelect.module.css'
 
-function TaskSelect(props) {
+function TaskSelect({ value, changed, data }) {
   return (
-    <select className={styles.select} value={props.value} onChange={props.changed}>
+    <select className={styles.select} value={value} onChange={changed}>
         {
-          props.data.map(
+          data.map(
             (cur) => {
               return <option key={cur.value} value={cur.value}>{cur.title}</option>
             }

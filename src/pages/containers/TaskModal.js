@@ -8,8 +8,8 @@ import { ReactComponent as CloseIcon } from '../../assets/images/close_icon.svg'
 import * as Actions from '../../store/reducers/actions/taskActions'
 import styles from './TaskModal.module.css'
 
-function TaskModal(props) {
-  const [taskName, setTaskName] = useState(props.name)
+function TaskModal({ id, name, closed }) {
+  const [taskName, setTaskName] = useState(name)
   const handleNameChange = useCallback(
     (evt) => {
       setTaskName(evt.target.value)
@@ -26,20 +26,20 @@ function TaskModal(props) {
   const handleTaskNameUpdated = useCallback(
     (evt) => {
       evt.preventDefault()
-      updateTaskName(props.id, taskName)
-      props.closed()
+      updateTaskName(id, taskName)
+      closed()
     },
-    [updateTaskName, props, taskName]
+    [id, closed, updateTaskName, taskName]
   )
   return (
     <>
-      <div className={styles.blackdrop} onClick={props.closed}/>
+      <div className={styles.blackdrop} onClick={closed}/>
       <div className={styles.modal}>
         <form onSubmit={handleTaskNameUpdated}>
           <TaskInput placeholder='Novo nome' value={taskName} changed={handleNameChange}/>
           <TaskCreatorButton title='Atualizar tarefa'/>
         </form>
-        <TaskModalButton icon={<CloseIcon/>} clicked={props.closed}/>
+        <TaskModalButton icon={<CloseIcon/>} clicked={closed}/>
       </div>
     </>
   )

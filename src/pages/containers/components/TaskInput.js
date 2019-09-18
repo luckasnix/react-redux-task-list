@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import styles from './TaskInput.module.css'
 
-function TaskInput(props) {
+function TaskInput({ placeholder, value, changed }) {
   const inputRef = useRef(null)
   useEffect(
     () => {
@@ -15,9 +15,9 @@ function TaskInput(props) {
       className={styles.input}
       ref={inputRef}
       type='text'
-      placeholder={props.placeholder}
-      value={props.value}
-      onChange={props.changed}
+      placeholder={placeholder}
+      value={value}
+      onChange={changed}
     />
   )
 }

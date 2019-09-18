@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './TaskCreatorButton.module.css'
 
-function TaskCreatorButton(props) {
+function TaskCreatorButton({ title }) {
   return (
     <input
       type='submit'
       className={styles.submit}
-      value={props.title}
+      value={title}
     />
   )
 }

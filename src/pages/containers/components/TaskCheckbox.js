@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './TaskCheckbox.module.css'
 
-function TaskCheckbox(props) {
+function TaskCheckbox({ checked, changed }) {
   return (
     <input
       className={styles.checkbox}
       type='checkbox'
-      checked={props.checked}
-      onChange={props.changed}
+      checked={checked}
+      onChange={changed}
     />
   )
 }
